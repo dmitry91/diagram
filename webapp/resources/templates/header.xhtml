@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+<ui:composition>
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <h:form style="display: inline" styleClass="navbar-form navbar-right">
+                <h3 class="h3" style="color: white; margin-right: 20px; display: inline">#{authorizationBean.user}</h3>
+                <h:commandButton styleClass="btn btn-default" action="#{authorizationBean.logout}" value="Exit"/>
+            </h:form>
+        </div>
+    </div>
+</ui:composition>
+</body>
+</html>

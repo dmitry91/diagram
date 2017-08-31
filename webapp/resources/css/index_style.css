@@ -1,0 +1,12 @@
+#flotcontainer {
+    width: 900px;
+    height: 500px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.tablecontainer{
+    height: 250px;
+    overflow-y:auto;
+    border: 2px solid lightgray;
+}

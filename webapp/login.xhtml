@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>login</title>
+</h:head>
+<h:body>
+
+    <f:facet name="middle">
+        <h:outputStylesheet name="bootstrap/css/bootstrap.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" language="javascript"
+                type="text/javascript"/>
+        <h:outputScript name="bootstrap/js/bootstrap.js"/>
+    </f:facet>
+
+    <div class="container">
+        <div class="row">
+            <div class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-collapse collapse">
+                        <h2 style="color: white">Login</h2>
+                    </div>
+                </div>
+            </div>
+            <h:form>
+                <div class="form-group">
+                    <label for="email">Login</label>
+                    <h:inputText styleClass="form-control" id="email"
+                                 a:placeholder="Enter email"
+                                 required="true"
+                                 requiredMessage="Enter email"
+                                 validatorMessage="Invalid email format"
+                                 value="#{authorizationBean.user}">
+                        <f:validator validatorId="com.dmitry.services.EmailValidator"/>
+                    </h:inputText>
+                    <h:message for="email"/>
+                </div>
+
+                <label for="password">Enter password</label>
+                <h:inputSecret styleClass="form-control" id="password"
+                               a:placeholder="Enter password"
+                               required="true"
+                               requiredMessage="Please enter your password"
+                               value="#{authorizationBean.password}">
+                </h:inputSecret>
+                <h:message for="password"/>
+
+                <br/>
+                <h:commandButton styleClass="btn btn-default" action="#{authorizationBean.validateUsernamePassword}"
+                                 value="Login"/>
+            </h:form>
+            <h:button styleClass="btn btn-default" value="Registration" outcome="register"/>
+
+        </div>
+    </div>
+</h:body>
+</html>
