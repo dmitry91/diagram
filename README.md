@@ -1,5 +1,6 @@
 To start you need to create a database 'diagram'
 and crete table
+
 CREATE TABLE `user` (
   `id` mediumint(9) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
